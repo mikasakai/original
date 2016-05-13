@@ -4,13 +4,14 @@
   <% if content_for?(:head) %>
     <%= yield :head %>
   <% else %>
-    <title>Monolist</title>
+    <title><%= content_for?(:title) ? yield(:title) : "Monolist"%></title>
   <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Monolist" %>">
 </head>
 <body>
 
