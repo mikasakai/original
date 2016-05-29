@@ -1,7 +1,6 @@
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
-      t.string :asin
       t.string :title
       t.string :description
       t.string :detail_page_url
@@ -11,8 +10,6 @@ class CreateItems < ActiveRecord::Migration
       t.string :raw_info
 
       t.timestamps null: false
-
-      t.index [:asin], unique: true
     end
   end
 end
