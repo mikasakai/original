@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :ownerships, only: [:create, :destroy]
-  resources :items , only: [:new , :show] do
-    member do
+  resources :items do
+    collection do
       get :post
     end
   end

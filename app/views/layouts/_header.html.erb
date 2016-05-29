@@ -23,7 +23,7 @@
               <li>
                 <%= link_to new_item_path do %>
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  アイテムを追加
+                  研究を検索
                 <% end %>
               </li>
               <li class="dropdown">
@@ -39,7 +39,7 @@
                     <%= link_to "プロフィール" , current_user  %>
                   </li>
                   <li>
-                    <%= link_to "投稿" , current_user  %>
+                    <%= link_to "投稿" , post_items_path  %>
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>

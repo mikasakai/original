@@ -111,7 +111,7 @@
   }
   .want {
     &:before {
-      content: "Want";
+      content: "Like";
     }
   }
   .have {
@@ -123,7 +123,7 @@
     background-color: #5cb85c;
     border-color: darken(#5cb85c, 5%);
     &:before {
-      content: "Want it";
+      content: "Like it";
     }
   }
   .have_it {

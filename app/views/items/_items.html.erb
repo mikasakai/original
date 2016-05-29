@@ -4,32 +4,19 @@
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
-            <% large_image = item['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '') %>
-            <% if item['mediumImageUrls'].first['imageUrl'].present? %>
-              <%= image_tag(item['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '') , alt: item['itemName']) %>
+            <% if item.large_image.present? %>
+              <%= image_tag(item.large_image , alt: item.title) %>
             <% else %>
-              <%= image_tag("no-image.png" , alt: item['itemName']) %>
+              <%= image_tag("no-image.png" , alt: item.title) %>
             <% end %>
           </div>
         </div>
         <div class="detail">
           <p class="title">
-            <% #TODO 商品タイトル %>
-            <%= item['itemName'] %>
+            <%= item.title %>
           </p>
         </div>
-        <div class="action clearfix">
-          <%= link_to "" , ownerships_path(item_code: item['itemCode'] , type: "Want") ,
-                      :class => "btn-want btn btn-danger btn-sm want",
-                      :item_code => "want-#{item['itemCode']}",
-                      :remote => true,
-                      :method => :post %>
-          <%= link_to "" , ownerships_path(item_code: item['itemCode'] , type: "Have") ,
-                      :class => "btn-have btn btn-warning btn-sm have",
-                      :item_code => "have-#{item['itemCode']}",
-                      :remote => true,
-                      :method => :post %>
-        </div>
+        <%= render 'items/action' , item: item if logged_in? %>
       </div>
     <% end %>
   </div>

@@ -4,11 +4,13 @@ class ItemsController < ApplicationController
 
   def new
     if params[:q]
-      response = RakutenWebService::Ichiba::Item.search(
-        keyword: params[:q],
-        imageFlag: 1,
-      )
-      @items = response.first(20)
+      if params[:q].present?
+        response = Item.where("title like '%" + params[:q] + "%'")
+      else
+        response = Item.all
+      end
+      @items = []
+      @items = response.first(20) if response.present?
     end
   end
 

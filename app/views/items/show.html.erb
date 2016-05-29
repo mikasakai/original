@@ -1,10 +1,3 @@
-<% content_for :title do %>
-  <%= @item.title %> -monolist
-<% end %>
-<% content_for :description do %>
-  <%= @item.title %>に関する情報です。この商品を欲しい人、持ってる人を表示しています。
-<% end %>
-
 <div class="container">
   <div class="container-inner inner-sm clearfix">
     <div class="item-single-main">
@@ -23,28 +16,13 @@
       </div>
       <%= render 'action' , item: @item %>
     </div>
-    <div class="item-single-side">
       <div class="side-box">
-        <h4 class="side-box-title">Haveしたユーザー</h4>
+        <h4 class="side-box-title">Likeしたユーザー</h4>
         <div class="side-box-body">
-          <% # TODO Haveしたユーザー一覧 %>
-          <% @have_users.each do |user| %>
-            <%= link_to(gravatar_for(user, size: 24), user) %>
-          <% end %>
-        </div>
-      </div>
-      <div class="side-box">
-        <h4 class="side-box-title">Wantしたユーザー</h4>
-        <div class="side-box-body">
-          <% # TODO Wantしたユーザー一覧 %>
           <% @want_users.each do |user| %>
             <%= link_to(gravatar_for(user, size: 24), user) %>
           <% end %>
         </div>
-      </div>
-      <div class="text-center">
-        <% #TODO 正しいリンク先に %>
-        <%= link_to('楽天詳細ページへ', @item.detail_page_url) %>
       </div>
     </div>
   </div>

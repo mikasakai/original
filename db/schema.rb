@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426042549) do
+ActiveRecord::Schema.define(version: 20150708042943) do
 
   create_table "items", force: :cascade do |t|
     t.string   "title"
@@ -20,12 +20,10 @@ ActiveRecord::Schema.define(version: 20160426042549) do
     t.string   "small_image"
     t.string   "medium_image"
     t.string   "large_image"
+    t.string   "raw_info"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "item_code"
   end
-
-  add_index "items", ["item_code"], name: "index_items_on_item_code", unique: true
 
   create_table "ownerships", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160426042549) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
