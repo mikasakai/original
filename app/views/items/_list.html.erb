@@ -4,7 +4,7 @@
       <div class="item-box">
         <div class="image">
           <div class="img-wrap">
-            <% if item.image.present? %>
+            <% if item.image.url.present? %>
               <%= image_tag(item.image , alt: item.title) %>
             <% else %>
               <%= image_tag("no-image.png" , alt: item.title) %>

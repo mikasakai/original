@@ -10,7 +10,7 @@
       <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
       気になった研究があれば「Like」しましょう
     </div>
-    <%= render 'items' , items: @items %>
+    <%= render 'list' , items: @items %>
   <% elsif params[:q].present? %>
     <div class="alert alert-danger">
       <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
