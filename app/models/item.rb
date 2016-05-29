@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
   has_many :ownerships  , foreign_key: "item_id" , dependent: :destroy
   has_many :users , through: :ownerships
   

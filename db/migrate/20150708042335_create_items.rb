@@ -8,6 +8,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :medium_image
       t.string :large_image
       t.string :raw_info
+      t.string :image
 
       t.timestamps null: false
     end

@@ -1,13 +1,17 @@
 <div class="box">
   <h2 class="box-title">投稿</h2>
   <div class="box-inner">
-    <%= form_for(@item) do |f| %>
+    <%= form_for(@item, :html => {:multipart => true}) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="form-group">
         <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
       </div>
       <div class="form-group">
         <%= f.text_field :description, class: "form-control", placeholder: "説明" %>
+      </div>
+      <div class="form-group">
+        ファイル<br />
+        <%= f.file_field :image %>
       </div>
       <div class="submit-group">
         <%= f.submit "登録する", class: "btn btn-success" %>

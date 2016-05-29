@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150708042943) do
     t.string   "medium_image"
     t.string   "large_image"
     t.string   "raw_info"
+    t.string   "image"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

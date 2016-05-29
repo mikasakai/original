@@ -35,6 +35,9 @@ gem 'bootstrap-sass'
 # https://github.com/rakuten-ws/rws-ruby-sdk
 gem 'rakuten_web_service'
 
+gem 'carrierwave'
+#gem 'rmagick', require: 'RMagick'
+
 gem 'pry-byebug', group: :development
 
 # Use Unicorn as the app server
