@@ -23,7 +23,7 @@
               <li>
                 <%= link_to new_item_path do %>
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  研究を検索
+                  ランチを探す
                 <% end %>
               </li>
               <li class="dropdown">
@@ -35,8 +35,11 @@
                   <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
+                   <li>
+                    <%= link_to "プロフィール" , user_path(current_user)  %>
+                  </li>
                   <li>
-                    <%= link_to "プロフィール" , current_user  %>
+                    <%= link_to "編集" , edit_user_path(current_user)  %>
                   </li>
                   <li>
                     <%= link_to "投稿" , post_items_path  %>

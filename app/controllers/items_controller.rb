@@ -32,6 +32,32 @@ class ItemsController < ApplicationController
       render 'new'
     end
   end
+  
+  def edit
+    @item = Item.find(params[:id])
+  end
+  
+  def update
+       @item = Item.find(params[:id])
+    if @item.update(item_params)
+      # 保存に成功した場合はトップページへリダイレクト
+      redirect_to @item , notice: '投稿内容を編集しました'
+    else
+      # 保存に失敗した場合は編集画面へ戻す
+      render 'edit'
+    end
+  end
+  
+   
+  
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    flash[:success] = "投稿を削除しました"
+    redirect_to request.referrer || root_url
+  end
+  
+  
 
   private
   
@@ -40,6 +66,6 @@ class ItemsController < ApplicationController
   end
   
   def item_params
-    params.require(:item).permit(:title, :description, :image, :image_cache, :remove_image)
+    params.require(:item).permit(:title, :description, :image, :image_cache, :remove_image, :category_id, :url)
   end
 end

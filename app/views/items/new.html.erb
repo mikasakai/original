@@ -1,20 +1,20 @@
 <div class="search">
   <%= form_tag new_item_path , method: :get do %>
     <%= text_field_tag :q , params[:q], placeholder: "キーワードを入力" %>
-    <%= submit_tag "研究を検索", name: nil , class: "btn btn-success", data: { disable_with: "検索中..."} %>
+    <%= submit_tag "ランチを探す", name: nil , class: "btn btn-success", data: { disable_with: "検索中..."} %>
   <% end %>
 </div>
 <div class="search-result">
   <% if @items.present? %>
     <div class="alert alert-info">
       <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-      気になった研究があれば「Like」しましょう
+      気になったランチがあれば「Like」しましょう
     </div>
     <%= render 'list' , items: @items %>
   <% elsif params[:q].present? %>
     <div class="alert alert-danger">
       <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-      検索したアイテムはありません
+      検索結果がありません
     </div>
   <% end %>
 </div>

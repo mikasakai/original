@@ -31,6 +31,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'bootstrap-sass'
 
+
 # http://webservice.rakuten.co.jp/sdk/ruby.html
 # https://github.com/rakuten-ws/rws-ruby-sdk
 gem 'rakuten_web_service'

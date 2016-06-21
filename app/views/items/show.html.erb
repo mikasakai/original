@@ -4,7 +4,7 @@
       <div class="image">
         <div class="img-wrap">
           <% if @item.image.present? %>
-            <%= image_tag(@item.image , alt: item.title) %>
+            <%= image_tag(@item.image , alt: @item.title) %>
           <% else %>
             <%= image_tag("no-image.png" , alt: @item.title) %>
           <% end %>
@@ -22,6 +22,12 @@
             <%= link_to(gravatar_for(user, size: 24), user) %>
           <% end %>
         </div>
+        
+        <%= @item.category.name %>
+        <h4 class="side-box-title">おすすめポイント</h4>
+        <%= @item.description %>
+        
+        <%= link_to "お店のページ", @item.url %>
       </div>
     </div>
   </div>
